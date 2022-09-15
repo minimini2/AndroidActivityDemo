@@ -63,11 +63,24 @@ public class MainActivity extends AppCompatActivity {
 
         //有账号和密码之后就把数据传到另一个界面
         /**
-         * 先要创建一个I意图对象，然后通过StartActivity来跳转
+         * 这部分是显示意图跳转到另外一个Activity
+         * 先要创建一个意图对象，然后通过StartActivity来跳转
          */
-        Intent intent = new Intent(this,SecondActivity.class);   //显示意图
-        intent.putExtra("account", accountText);
-        intent.putExtra("pwd", pwdText);
+//        Intent intent = new Intent(this,SecondActivity.class);   //显示意图
+//        intent.putExtra("account", accountText);
+//        intent.putExtra("pwd", pwdText);
+//        startActivity(intent);
+
+        /**
+         * 接下来使用隐式意图的方式来跳转到另外一个Activity
+         */
+        Intent intent = new Intent();
+        intent.setAction("com.example.LOGIN_INFO");
+//        intent.addCategory("android.intent.category.DEFAULT");
+        intent.addCategory(Intent.CATEGORY_DEFAULT);
+        intent.putExtra("account",accountText);
+        intent.putExtra("pwd",pwdText);
         startActivity(intent);
+
     }
 }
