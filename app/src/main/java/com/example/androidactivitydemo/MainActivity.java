@@ -75,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
          * 接下来使用隐式意图的方式来跳转到另外一个Activity
          */
         Intent intent = new Intent();
-        intent.setAction("com.example.LOGIN_INFO");
-//        intent.addCategory("android.intent.category.DEFAULT");
-        intent.addCategory(Intent.CATEGORY_DEFAULT);
+        intent.setAction("com.example.LOGIN_INFO"); //com.example.LOGIN_INFO来源于注册文件
+//        intent.addCategory("android.intent.category.DEFAULT");//也来源于注册文件
+        intent.addCategory(Intent.CATEGORY_DEFAULT);    //同注释掉的语句相同，括号内容也相同
         intent.putExtra("account",accountText);
         intent.putExtra("pwd",pwdText);
         startActivity(intent);
